@@ -13,10 +13,13 @@ import {
     IonDatetime,
     IonContent,
     IonToolbar,
+    IonInput
        } from '@ionic/react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 export default class Tab1 extends React.Component {
+    state = {
+        data:""
+    }
 render() {
     return (<>
           <IonHeader>
@@ -26,7 +29,7 @@ render() {
                  </IonButtons>      
                  <IonTitle>Tab 1</IonTitle>
               </IonToolbar>
-          </IonHeader>
+          </IonHeader> 
          <IonContent>
              <div className = 'ion-padding-about-info'>
                 <h4>Just a regular title Tab 1</h4>
@@ -35,9 +38,8 @@ render() {
                     <IonItem>
                         <IonIcon name = 'calendar' slot = 'start'></IonIcon>
                         <IonLabel> Data de nascimento</IonLabel>
-                        <IonDatetime displayFormat = 'DD MMM, YYYY' max = '2056' value = {null}></IonDatetime>
+                        <IonDatetime displayFormat = 'DD MMM, YYYY' max = '2056' value = {this.state.data}></IonDatetime>
                     </IonItem>
-
                     <IonItem>
                         <IonIcon name = 'pin' slot = 'start'></IonIcon>
                         <IonLabel> Selector</IonLabel>
@@ -49,6 +51,7 @@ render() {
                         </IonSelect>
                     </IonItem>
                 </IonList>
+                <IonInput></IonInput>
                 <p>Apenas um parágrafo</p>
              </div>
          </IonContent>

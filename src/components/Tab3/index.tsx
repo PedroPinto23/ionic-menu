@@ -14,10 +14,12 @@ import {
     IonContent,
     IonToolbar,
        } from '@ionic/react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 
 export default class Tab3 extends React.Component {
+    state = {
+        data: ''
+    }
     render() {
         return (
             <>
@@ -25,7 +27,7 @@ export default class Tab3 extends React.Component {
               <IonToolbar color = 'primary'>
                   <IonButtons slot = 'start'>
                  <IonMenuButton></IonMenuButton>
-                 </IonButtons>      
+                 </IonButtons>       
                  <IonTitle>Tab 3</IonTitle>
               </IonToolbar>
           </IonHeader>
@@ -37,7 +39,7 @@ export default class Tab3 extends React.Component {
                     <IonItem>
                         <IonIcon name = 'calendar' slot = 'start'></IonIcon>
                         <IonLabel> Data de nascimento</IonLabel>
-                        <IonDatetime displayFormat = 'DD MMM, YYYY' max = '2056' value = {null}></IonDatetime>
+                        <IonDatetime displayFormat = 'DD MMM, YYYY' max = '2056' value = {this.state.data}></IonDatetime>
                     </IonItem>
 
                     <IonItem>
